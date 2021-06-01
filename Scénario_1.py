@@ -5,7 +5,7 @@
 # Author: Paul CHARACHON
 # Description: Scénario 1: Faire un arc de cercle
 # avec un panneau solaire, en s'arretant toute les 0.5 secondes
-# Last Modified : Tue 31 MAY 2021 18:50
+# Last Modified : Tue 1 June 2021 15:50
 # Python Version 3.9
 # Used https://learn.adafruit.com/adafruit-16-channel-servo-driver-with-raspberry-pi/using-the-adafruit-library
 import time
