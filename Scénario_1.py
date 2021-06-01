@@ -13,39 +13,50 @@ from adafruit_motor import servo
 from adafruit_servokit import ServoKit
 kit = ServoKit(channels=13)
 """defining the total number of pins on my microcontroller """
-def servo_horizontale(position_start, position_final, sens):
+def servo_horizontale(position):
 
-""" defining the horizontal movement"""
+""" defining the horizontal left movement, takes the new value at the start of each iteration"""
 
-while position < position_final:
-    position = position_start
-    kit.servo[0].angle = position_start
-    position = position + int(sens) * 5
-""" updating the new value of the angle of the servo"""
-    time.sleep(0, 5)
-    break
+	kit.servo[0].angle = position
+	time.sleep(0, 5)
 
-def servo_verticale(position_start, position_final, sens):
 
-""" defining the horizontal movement"""
+def servo_verticale_montée(position):
 
-while position < position_final:
-    position_2 = position_start
-    kit.servo[0].angle = position_2
-    position_2 = position_2 + int(sens) * 5
-    """ updating the new value of the angle of the servo"""
-    time.sleep(0, 5)
-    break
+""" defining the vertial up movement, takes the new value at the start of each iteration"""
+
+	kit.servo[1].angle = position
+	time.sleep(0, 5)
+
+
+def servo_verticale_descente(position):
+
+""" defining the vertical down movement, takes the new value at the start of each iteration"""
+
+	kit.servo[1].angle = position
+	time.sleep(0, 5)
 
 
 def scénario_1():
-	""" definfing the first scenario"""
-    While position_2 < 90:
-    """ sets a condition for vertical position and also sunrise"""
-        servo_horizontale(0, 90, 1)
-        servo_verticale(0, 90, 1)
+	""" definfing the first scenario, setting up key point values, so at the beginning and at the middle"""
+	position_actuelle_horizontale_sunrise = 0
+	position_actuelle_verticale_sunrise = 0
+	position_actuelle_horizontale_sundown = 90
+	position_actuelle_verticale_sundown = 90
 
-    While position_2 > 0:
-    """sundown = afternoon"""
-        servo_horizontale(90, 180, 1)
-        servo_verticale(90, 0, -1)
+    While position_actuelle_verticale_sunrise < 90:
+    """ Rise of the solar panel, until the peak at midday/sunrise"""
+    	
+        servo_horizontale(position_actuelle_horizontale_sunrise)
+        servo_verticale_montée(position_actuelle_verticale_sunrise)
+        """increments both position variables to update the position"""
+        position_actuelle_horizontale_sunrise = +=5
+        position_actuelle_horizontale_sunrise = +=5
+
+    While position_actuelle_verticale_sundown > 0:
+    """sundown = afternoon, the panel continues to rotate to the left but goes down"""
+        servo_horizontale(position_actuelle_horizontale_sundown)
+        servo_verticale_descente(position_actuelle_verticale_sundown)
+        """increments both position variables to update the position"""
+        position_actuelle_horizontale_sundown = +=5
+        position_actuelle_verticale_sundown = -=5
