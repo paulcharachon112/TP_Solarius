@@ -42,7 +42,7 @@ def servo_horizontale(position):
     """ defining the horizontal left movement, takes the new value at the start
     of each iteration"""
 
-    kit.servo[0].angle = position
+    kit.servo[1].angle = position
     time.sleep(0, 5)
 
 
@@ -50,7 +50,7 @@ def servo_verticale(position):
     """ defining the vertial up movement, takes the new value at the start
     of each iteration"""
 
-    kit.servo[1].angle = position
+    kit.servo[4].angle = position
     time.sleep(0, 5)
 
 
