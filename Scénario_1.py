@@ -50,7 +50,7 @@ def scénario_1():
     position_actuelle_verticale_sundown = 90
 
     While position_actuelle_verticale_sunrise < 90:
-    """ Rise of the solar panel, until the peak at midday/sunrise"""
+        """ Rise of the solar panel, until the peak at midday/sunrise"""
 
         servo_horizontale(position_actuelle_horizontale_sunrise)
         servo_verticale_montée(position_actuelle_verticale_sunrise)
@@ -59,7 +59,7 @@ def scénario_1():
         position_actuelle_horizontale_sunrise = +=5
 
     While position_actuelle_verticale_sundown > 0:
-    """sundown = afternoon, the panel continues to rotate to the left but 
+        """sundown = afternoon, the panel continues to rotate to the left but
         goes down"""
         servo_horizontale(position_actuelle_horizontale_sundown)
         servo_verticale_descente(position_actuelle_verticale_sundown)
