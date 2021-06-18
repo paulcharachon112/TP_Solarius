@@ -1,3 +1,2 @@
 # TP_Solarius
-je sais pas trop comment ça marche mais jai mis les flowcharts des scenarios 1 et 2
-je suis en train de découvrir le fonctionnement de adafruit et des light sensors
+Rendu complet de l'activité demandé par le donneur d'ordre. Scénario 1 et Scénario 2 ainsi que leurs flowchart... Je n'ai pas pu tester le code sur une adafruit playground express
